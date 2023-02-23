@@ -16,6 +16,7 @@ class BookController(
     // WebFlux 에서 자동으로 subscribe()  (리액터: 터미널연산자: 중간연산자들을 모두 실행시킴) 를 호출한다.
     @GetMapping("/books")
     fun getAll(): Flux<Book> {
+        Thread.sleep(1000)
         return bookService.getAll()
     }
 
